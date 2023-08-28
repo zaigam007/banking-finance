@@ -21,6 +21,7 @@ variable "aws_secret_key" {}
 resource "aws_instance" "First-Terraform-Instance"{
 ami = "ami-0989fb15ce71ba39e"
 instance_type = "t3.micro"
+key_name = "Stockholmpem"
 tags = {
         Name = "Terraform-hands-on"
 }
