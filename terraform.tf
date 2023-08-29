@@ -26,6 +26,13 @@ tags = {
         Name = "Test-server"
 }
 
+resource "aws_instance" "Prod-Terraform-Instance"{
+ami = "ami-0989fb15ce71ba39e"
+instance_type = "t3.micro"
+key_name = "Stockholmpem"
+tags = {
+        Name = "Prod-server"
+}
 
 }
 output "instance_ip" {
@@ -36,3 +43,13 @@ resource "local_file" "instance_ip_file" {
   filename = "instance_ip.txt"
   content  = aws_instance.First-Terraform-Instance.public_ip
 }
+
+output "instance_ip" {
+  value = aws_instance.Prod-Terraform-Instance.public_ip
+}
+
+resource "local_file" "instance_ip_file2" {
+  filename = "prod_ip.txt"
+  content  = aws_instance.Prod-Terraform-Instance.public_ip
+}
+
