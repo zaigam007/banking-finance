@@ -44,7 +44,7 @@ resource "local_file" "instance_ip_file" {
   content  = aws_instance.First-Terraform-Instance.public_ip
 }
 
-output "instance_ip" {
+output "instance_ip2" {
   value = aws_instance.Prod-Terraform-Instance.public_ip
 }
 
