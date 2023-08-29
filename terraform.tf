@@ -25,7 +25,7 @@ key_name = "Stockholmpem"
 tags = {
         Name = "Test-server"
 }
-
+}
 resource "aws_instance" "Prod-Terraform-Instance"{
 ami = "ami-0989fb15ce71ba39e"
 instance_type = "t3.micro"
